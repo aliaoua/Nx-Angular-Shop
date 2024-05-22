@@ -1,0 +1,75 @@
+<p-toast />
+<div *ngIf="orders$ | async as orders">
+    <p-confirmDialog />
+
+    <div class="admin-page">
+        <p-card header="Orders" subheader="List of all orders">
+            <div class="p-grid">
+                <div class="p-col-12">
+                    <p-table
+                        [value]="orders"
+                        styleClass="p-datatable-gridlines"
+                    >
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="user">
+                                    User<p-sortIcon field="user"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="totalPrice">
+                                    Total Price<p-sortIcon
+                                        field="totalPrice"
+                                    ></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="dateOrdered">
+                                    Date Ordered<p-sortIcon
+                                        field="dateOrdered"
+                                    ></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="status">
+                                    Status<p-sortIcon field="name"></p-sortIcon>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-order>
+                            <tr>
+                                <td>{{ order.user?.name }}</td>
+                                <td>
+                                    {{ order.totalPrice | currency }}
+                                </td>
+                                <td>
+                                    {{ order.dateOrdered | date : 'short' }}
+                                </td>
+                                <td>
+                                    <p-tag
+                                        [value]="
+                                            orderStatus[order.status]?.label
+                                        "
+                                        [severity]="
+                                            orderStatus[order.status]?.color
+                                        "
+                                        styleClass="px-4 py-2"
+                                    ></p-tag>
+                                </td>
+                                <td>
+                                    <p-button
+                                        styleClass="p-button-danger mx-1"
+                                        icon="pi pi-trash"
+                                        (click)="
+                                            showDeleteConfirmation(order.id)
+                                        "
+                                    ></p-button>
+                                    <p-button
+                                        styleClass="p-button-success"
+                                        icon="pi pi-eye"
+                                        [routerLink]="['detail', order.id]"
+                                    ></p-button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

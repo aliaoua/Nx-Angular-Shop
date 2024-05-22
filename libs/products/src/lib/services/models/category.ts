@@ -1,0 +1,10 @@
+export interface CategoriesDto {
+    categories: Category[]
+}
+export interface Category {
+    id?: string
+    name?: string
+    icon?: string
+    color?: string
+    checked?: boolean
+}

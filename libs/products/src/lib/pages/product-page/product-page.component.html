@@ -1,0 +1,55 @@
+<div class="product-page">
+    <ng-container *ngIf="product$ | async as product">
+        <div class="grid">
+            <div class="col-6">
+                <ng-container *ngIf="product.image && product.images">
+                    <ui-gallery [selectedImage]="product.image" [gallery]="product.images" />
+                </ng-container>
+            </div>
+            <div class="col-6 product">
+                <h2 class="product-name">{{ product.name }}</h2>
+                <p class="prduct-desc">{{ product.description }}</p>
+                <div class="product-rating">
+                    <p-rating [(ngModel)]="rating" [cancel]="false" [disabled]="true"></p-rating>
+                </div>
+                <div class="product-price">
+                    {{ product.price | currency }}
+                    <span class="price-before">
+                        {{ product.price && product.price + 18 | currency }}
+                    </span>
+                </div>
+                <div class="product-quantity">
+                    <div class="field col-12 md:col-3 p-0">
+                        <label for="minmax">Quantity</label>
+                        <p-inputNumber
+                            [(ngModel)]="quantityVariable"
+                            inputId="minmax"
+                            inputId="minmax"
+                            mode="decimal"
+                            [min]="1"
+                            [max]="100"
+                            [showButtons]="true"
+                        >
+                        </p-inputNumber>
+                    </div>
+                </div>
+                <div class="product-actions ml-4">
+                    <button pButton pRipple type="button" label="Buy now" class="p-button-rounded mr-2"></button>
+                    <button
+                        pButton
+                        pRipple
+                        type="button"
+                        label="Add to cart"
+                        class="p-button-rounded"
+                        (click)="addProductToCart()"
+                    ></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid product-richDescritption">
+            <div class="col-12">
+                <div [innerHTML]="product.richDescription"></div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,66 @@
+<div class="admin-page">
+    <p-card [header]="'Dashboard'" subheader="latest Updates">
+        <div class="grid">
+            <div class="col-2">
+                <p-card styleClass="d-orders">
+                    <div class="d-item">
+                        <div class="d-inner">
+                            <i class="pi pi-shopping-cart"></i>
+                            <span class="name">Orders </span>
+                        </div>
+                        <div *ngIf="totalOrders | async as totalOrderss">
+                            <span class="number">{{
+                                totalOrderss.orderCount
+                            }}</span>
+                        </div>
+                    </div>
+                </p-card>
+            </div>
+            <div class="col-2">
+                <p-card styleClass="d-products">
+                    <div class="d-item">
+                        <div class="d-inner">
+                            <i class="pi pi-briefcase"></i>
+                            <span class="name">Products</span>
+                        </div>
+                        <div *ngIf="totalProducts | async as totalProductss">
+                            <span class="number">{{
+                                totalProductss.count
+                            }}</span>
+                        </div>
+                    </div>
+                </p-card>
+            </div>
+            <div class="col-2">
+                <p-card styleClass="d-users">
+                    <div class="d-item">
+                        <div class="d-inner">
+                            <i class="pi pi-users"></i>
+                            <span class="name">Users</span>
+                        </div>
+                        <div *ngIf="totalUsers | async as totalUserss">
+                            <span class="number">{{ totalUserss.count }}</span>
+                        </div>
+                    </div>
+                </p-card>
+            </div>
+            <div class="col-6">
+                <p-card styleClass="d-totalSales">
+                    <div class="d-item">
+                        <div class="d-inner">
+                            <i class="pi pi-dollar"></i>
+                            <span class="name">Total Sales</span>
+                        </div>
+
+                        <div *ngIf="totalSales | async as totalSaless">
+                            <span class="number">{{
+                                totalSaless.totalsales
+                                    | currency : 'USD' : true : '1.0-0'
+                            }}</span>
+                        </div>
+                    </div>
+                </p-card>
+            </div>
+        </div>
+    </p-card>
+</div>

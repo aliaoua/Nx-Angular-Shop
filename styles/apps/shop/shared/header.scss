@@ -1,0 +1,25 @@
+header {
+    margin-bottom: 30px;
+    .logo {
+        img {
+            width: 160px;
+        }
+    }
+    .search {
+        margin-top: 18px;
+    }
+    .tools {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        padding-bottom: 23px;
+        margin-left: 33px;
+
+        .pi {
+            // margin-right: 10px;
+            font-size: 23px;
+            color: var(--surface-600);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.nav {
+    margin-top: 18px;
+    display: flex;
+    gap: 15px;
+
+    li {
+        a {
+            font-size: 20px;
+            color: var(--surface-500);
+            cursor: pointer;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}

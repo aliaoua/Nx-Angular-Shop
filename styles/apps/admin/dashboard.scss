@@ -1,0 +1,104 @@
+.d-orders {
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    .d-item {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        color: var(--surface-0);
+        .number {
+            font-size: 4em;
+            margin-top: 10px;
+        }
+        .d-inner {
+            display: flex;
+            flex-direction: column;
+            .name {
+                font-size: 1.4em;
+            }
+            .pi {
+                font-size: 4em;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.d-products {
+    background-color: #fbab7e;
+    background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+
+    .d-item {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        color: var(--surface-0);
+        .number {
+            font-size: 4em;
+            margin-top: 10px;
+        }
+        .d-inner {
+            display: flex;
+            flex-direction: column;
+            .name {
+                font-size: 1.4em;
+            }
+            .pi {
+                font-size: 4em;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+.d-users {
+    background-color: #ffe53b;
+    background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+
+    .d-item {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        color: var(--surface-0);
+        .number {
+            font-size: 4em;
+            margin-top: 10px;
+        }
+        .d-inner {
+            display: flex;
+            flex-direction: column;
+            .name {
+                font-size: 1.4em;
+            }
+            .pi {
+                font-size: 4em;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+.d-totalSales {
+    background-color: #3ff44b;
+    background-image: linear-gradient(132deg, #3ff44b 0%, #0c9077 100%);
+
+    .d-item {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        color: var(--surface-0);
+        .number {
+            font-size: 4em;
+            margin-top: 10px;
+        }
+        .d-inner {
+            display: flex;
+            flex-direction: column;
+            .name {
+                font-size: 1.4em;
+            }
+            .pi {
+                font-size: 4em;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
